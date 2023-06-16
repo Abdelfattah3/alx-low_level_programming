@@ -1,9 +1,11 @@
 #include <stdio.h>
 /**
- * main - learning c
+ * main - prints a sentence.
+ * this function prints a sentence
+ * return (0) successful.
  */
-int main(void) /*ood*/
+int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle");/* comments */
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
