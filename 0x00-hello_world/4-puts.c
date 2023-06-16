@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - prints a sentence.
- * this function prints a sentence
- * return (0) successful.
+ * main - entry point
+ * this function prints a sentence.
+ * Return: 0
  */
 int main(void)
 {
