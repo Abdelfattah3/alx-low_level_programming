@@ -16,23 +16,24 @@ int main(void)
 		while (secondDigit <= 99)
 		{
 			if (secondDigit != firstDigit)
-			{
-					putchar((firstDigit / 10) + 48);
-					putchar((firstDigit % 10) + 48);
-					putchar(' ');
-					putchar((secondDigit / 10) + 48);
-					putchar((secondDigit % 10) + 48);
+			{	putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
+				putchar(' ');
+				putchar((secondDigit / 10) + 48);
+				putchar((secondDigit % 10) + 48);
 
 					if (firstDigit != 98 || secondDigit != 99)
-					{
-						putchar(',');
+					{	putchar(',');
 						putchar(' ');
 					}
 			}
+
 			secondDigit++;
 		}
+
 		firstDigit++;
 	}
+
 	putchar('\n');
 
 	return (0);
