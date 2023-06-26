@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
-* swap - swaps the values of two integers
+* swap_int - swaps the values of two integers
 *
-* @a: int paramter
-* @b; int paramter
+* @a: input paramter
+* @b: input paramter
 *
 * Return: nothing
 */
