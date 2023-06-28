@@ -29,9 +29,8 @@ void times_table(void)
 			}
 			else
 			{
-				_putchar((prod / 10) + '0'); /*get the first digit*/
-
-				_putchar((prod % 10) + '0'); /*get the second digit*/
+				_putchar((prod / 10) + '0');
+				_putchar((prod % 10) + '0'); 
 			}
 		}
 		_putchar('\n');
