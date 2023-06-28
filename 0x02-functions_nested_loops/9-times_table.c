@@ -21,7 +21,7 @@ void times_table(void)
 			c = a * b;
 			if (c <= 9)
 			{
-				_putchar('c');
+				_putchar(c);
 			}
 			else
 			{
