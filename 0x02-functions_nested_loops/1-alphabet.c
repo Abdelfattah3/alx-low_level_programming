@@ -2,9 +2,7 @@
 #include <stdio.h>
 
 /**
-* main - entry
 * print_alphabet - prints alphabets in order
-* Return: 0 (success)
 */
 
 void print_alphabet(void)
