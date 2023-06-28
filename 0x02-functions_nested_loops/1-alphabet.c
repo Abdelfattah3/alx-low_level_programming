@@ -3,7 +3,7 @@
 
 /**
 * main - entry
-* Description : hlee
+* print_alphabet - prints alphabets in order
 * Return: 0 (success)
 */
 
