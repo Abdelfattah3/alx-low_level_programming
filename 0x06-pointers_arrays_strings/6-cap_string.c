@@ -40,7 +40,7 @@ int isDelimiter(char c)
 char *cap_string(char *s)
 {
 	char *ptr = s;
-	int foundDelimit =1;
+	int foundDelimit = 1;
 
 	while (*s)
 	{
@@ -48,7 +48,7 @@ char *cap_string(char *s)
 			foundDelimit = 1;
 		else if (isLower(*s) && foundDelimit)
 		{
-			*s -=32;
+			*s -= 32;
 			foundDelimit = 0;
 		}
 		else
