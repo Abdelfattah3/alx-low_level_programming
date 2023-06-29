@@ -3,8 +3,8 @@
 
 /*
 * _strcat - appends the string dest
-* @dest: input
-* @src: input
+* @dest: pointer
+* @src: pointer
 *
 * Return: pointer to string
 */
