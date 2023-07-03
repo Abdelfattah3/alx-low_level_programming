@@ -10,15 +10,28 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int itr, jtr;
+	 int index;
 
-	for (itr = 0; s[itr] != '\0'; itr++)
-	{
-		for (jtr = 0; accept[jtr] != s[itr]; jtr++)
-		{
-			if (accept[jtr] == '\0')
-				return (itr);
-		}
-	}
-	return (itr);
+	 if (*needlw == 0)
+	 {
+		 reurn (haystack);
+	 }
+	 while (*haystack)
+	 {
+		 index = 0;
+
+		 if (haystack[index] == needle[index])
+		 {
+			 do
+			 {
+				 if (needle[index + 1] == '\0')
+					 return (haystack);
+
+				 index++;
+			 }
+			 while (haystack[index] == needle[index]);
+		 }
+		 haystack++;
+	 }
+	return ('\0');
 }
