@@ -6,7 +6,7 @@
 * @size: integer
 */
 
-void print_diagsums(int *a, int size);
+void print_diagsums(int *a, int size)
 {
 	int itr, s1 = 0, s2 = 0;
 
