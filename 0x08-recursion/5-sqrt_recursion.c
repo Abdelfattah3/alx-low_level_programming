@@ -28,6 +28,5 @@ int check(int n, int m)
 		return (m);
 	else if (n > m)
 		check(n, m + 1);
-	else
 		return (-1);
 }
