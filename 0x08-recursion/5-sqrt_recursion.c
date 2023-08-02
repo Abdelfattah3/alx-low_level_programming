@@ -26,10 +26,8 @@ int check(int n, int m)
 {
 	if (n == m * m)
 		return (m);
-	{
-	if (n > m)
-		check(n, m + 1);
+	else if (n > m)
+		return (check(n, m + 1));
 	else
 		return (-1);
-	}
 }
