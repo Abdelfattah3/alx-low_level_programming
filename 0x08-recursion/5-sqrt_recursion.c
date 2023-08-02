@@ -23,11 +23,12 @@ int _sqrt_recursion(int n)
 */
 
 int check(int n, int m)
-{
+
 	if (n == m * m)
 		return (m);
 	else if (n > m)
 		check(n, m + 1);
 	else
-		return (-1);
+{
+	return (-1);
 }
