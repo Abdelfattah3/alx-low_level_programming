@@ -31,4 +31,3 @@ int check(int n, int m)
 	else
 		return (-1);
 }
-
