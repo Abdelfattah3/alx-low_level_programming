@@ -26,5 +26,5 @@ int check(int n, int m)
 		return (1);
 	if ( n % m == 0)
 		return (0);
-	return (check(n, m + 1);
+	return (check(n, m + 1));
 }
