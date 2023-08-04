@@ -24,8 +24,8 @@ int main(int argc, char **argv)
 		{
 			if (n >= a[i])
 			{
-			 m = m + (n / a[i]);
-			 n = n % a[i];
+				m = m + (n / a[i]);
+				n = n % a[i];
 			}
 		}
 	}
