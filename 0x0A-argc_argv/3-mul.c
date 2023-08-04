@@ -10,14 +10,18 @@
 
 int main(int argc, char **argv)
 {
-	int i;
+	int i,n;
+	n = 1;
 
 	if (argc < 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	i = (atoi(argv[argc - 1]) * atoi(argv[argc - 2]));
-	printf("%d\n", i);
+	for (i = 1; i < argc; i++)
+	{
+	n = atoi(argv[i]) * n;
+	}
+	printf("%d\n", n);
 	return (0);
 }
