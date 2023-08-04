@@ -2,30 +2,48 @@
 #include <stdlib.h>
 #include "string.h"
 /**
+* ischar - checks for the string
+* @s : string
 * main - prints a name
-* @argc: int
-* @argv: string
 * Return: 0
 */
-
+int ischar(char *s)
+{
+	while (*s != '\0')
+	{
+		if (*s < '0' || *s > '9')
+		{
+			return (1);
+		}
+		s++;
+	}
+	return (0);
+}
+/**
+* main - adds numbers
+* @argc: int
+* @argv: string
+* Return: number
+*/
 int main(int argc, char **argv)
 {
 	int i;
 	int n = 0;
 
-	if (argc < 3)
+	if (argc > 1)
 	{
-		printf("0\n");
-		return (0);
-	}
-	for (i = 1; i < argc; i++)
-	{
-		if (*argv[i] < '0' || *argv[i] > '9')
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-			return (1);
+			if (ischar(argv[i]) == 1)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			else
+			{
+				n = n + atoi(argv[i]);
+			}
 		}
-		n = n + atoi(argv[i]);
 	}
 	printf("%d\n", n);
 	return (0);
