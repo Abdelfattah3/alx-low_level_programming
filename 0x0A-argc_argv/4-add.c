@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
 	int i;
-	unsigned int n = 0;
+	int n = 0;
 
 	if (argc == 1)
 	{
