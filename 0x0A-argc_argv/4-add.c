@@ -13,21 +13,17 @@ int main(int argc, char **argv)
 	int i;
 	int n = 0;
 
-	if (argc == 1)
+	if (argc < 2)
 	{
 		printf("0\n");
 		return (0);
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if ((*argv[i] < 48 || *argv[i] > 57) && (*argv[i] != 45))
+		if (*argv[i] < '0' || *argv[i] > '9')
 		{
 			printf("Error\n");
 			return (1);
-		}
-		if (atoi(argv[i]) < 0)
-		{
-			*argv[i] = 0;
 		}
 		n = n + atoi(argv[i]);
 	}
