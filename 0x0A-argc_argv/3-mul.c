@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include "string.h"
 /**
 * main - prints a name
 * @argc: int
