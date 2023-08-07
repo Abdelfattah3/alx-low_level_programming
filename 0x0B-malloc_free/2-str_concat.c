@@ -10,7 +10,7 @@ int stt(char *s)
 {
 	int i = 0;
 
-	if(*s == '\0')
+	if(s == NULL)
 	{
 		return (0);
 	}
@@ -40,13 +40,19 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 	b = a;
-	while (*s1 != '\0')
+	if (s1 != NULL)
 	{
-		*a++ = *s1++;
+		while (*s1 != '\0')
+		{
+			*a++ = *s1++;
+		}
 	}
-	while (*s2 != '\0')
+	if (s2 != NULL)
 	{
-		*a++ = *s2++;
+		while (*s2 != '\0')
+		{
+			*a++ = *s2++;
+		}
 	}
 	*a = '\0';
 	return (b);
