@@ -10,7 +10,7 @@ int stt(char *s)
 {
 	int i = 0;
 
-	if(s == NULL)
+	if (s == NULL)
 	{
 		return (0);
 	}
