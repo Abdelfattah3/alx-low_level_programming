@@ -40,7 +40,14 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 	b = a;
-
+	if (stt(s2) == 1)
+	{
+		*s2 = ' ';
+	}
+	if (stt(s1) == 1)
+	{
+		*s1 = ' ';
+	}
 	while (*s1 != '\0')
 	{
 		*a++ = *s1++;
