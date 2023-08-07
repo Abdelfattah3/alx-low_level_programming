@@ -8,7 +8,7 @@
 */
 int stt(char *s)
 {
-	int i = 1;
+	int i = 0;
 
 	if (s == NULL)
 	{
