@@ -10,7 +10,11 @@ int stt(char *s)
 {
 	int i = 0;
 
-	while (s != NULL)
+	if(*s == '\0')
+	{
+		return (0);
+	}
+	while (*s != '\0')
 	{
 		i++;
 		s++;
