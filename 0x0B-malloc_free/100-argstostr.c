@@ -10,10 +10,6 @@ int stt(char *s)
 {
 	int i = 0;
 
-	if (s == NULL)
-	{
-		return (0);
-	}
 	while (*s != '\0')
 	{
 		i++;
@@ -29,10 +25,12 @@ int stt(char *s)
 */
 char *argstostr(int ac, char **av)
 {
-	int j, i;
+	int j, i, m, k;
 	char *a;
 	char *b;
 
+	m = 0;
+	k = 0;
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
@@ -42,18 +40,23 @@ char *argstostr(int ac, char **av)
 	{
 		j = j + stt(av[i]);
 	}
-	a = malloc((j + 1 + ac) * sizeof(char));
+	a = malloc((j + ac  + 1) * sizeof(char));
 	if (a == NULL)
 	{
 		return (NULL);
+		free(a);
 	}
 	b = a;
-	while (**av != '\0')
+	for (k = 0; k < ac; k++)
 	{
-		*a++ = **av++;
+		for (m = 0; m < (stt(av[k])); m++)
+		{
+			*a = av[k][m];
+			a++;
+		}
 		*a = '\n';
+		a++;
 	}
-	*a = '\n';
 	*a = '\0';
 	return (b);
 }
