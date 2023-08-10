@@ -20,10 +20,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 	b = a;
-	while (i <= l)
+	for (i = 0; i < l; i++)
 	{
 		b[i] = 0;
-		i++;
 	}
 	return (a);
 }
