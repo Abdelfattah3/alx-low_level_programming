@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			*a++ = *s2++;
 		}
-		while (j > n && m < n)
+		while (j > n && m <= n)
 		{
 			*a++ = s2[m];
 			m++;
