@@ -20,11 +20,13 @@ int _strlen(char *n)
 }
 char *copy(char *m, char *name)
 {
-	while (*name != '\0')
+	int i;
+
+	for (i = 0; name[i] != '\0'; i++)
 	{
-		*m++ = *name++;
+		m[i] = name[i];
 	}
-	*m = '\0';
+	m[i] = '\0';
 	return (m);
 }
 dog_t *new_dog(char *name, float age, char *owner)
@@ -52,7 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (mydog->owner == NULL)
 	{
 		free(mydog->owner);
-		free(mydo);
+		free(mydog);
 		return (NULL);
 	}
 	(*mydog).name = copy(mydog->name, name);
