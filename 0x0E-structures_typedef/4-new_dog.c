@@ -1,11 +1,9 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
-* new_dog - create a structure pointer
-* @name : dog name
-* @age : dog age
-* @owner : dog owner
-* Return: pointer to the new structure
+* _strlen - calculates string length
+* @n : string
+* Return: int
 */
 int _strlen(char *n)
 {
@@ -18,6 +16,12 @@ int _strlen(char *n)
 	}
 	return (length);
 }
+/**
+* copy - copies two strings
+* @m : string 1
+* @name : string 2
+* Return: pointer to string
+*/
 char *copy(char *m, char *name)
 {
 	int i;
@@ -29,6 +33,13 @@ char *copy(char *m, char *name)
 	m[i] = '\0';
 	return (m);
 }
+/**
+* new_dog - create a structure pointer
+* @name : dog name
+* @age : dog age
+* @owner : dog owner
+* Return: pointer to the new structure
+*/
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *mydog;
@@ -57,6 +68,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(mydog);
 		return (NULL);
 	}
-	mydog->owner = copy( mydog->owner, owner);
+	mydog->owner = copy(mydog->owner, owner);
 	return (mydog);
 }
