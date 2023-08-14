@@ -32,15 +32,34 @@ char *copy(char *m, char *name)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *mydog;
-	dog_t dog;
+	char *m;
+	char *b;
 
 	if (name == NULL || owner == NULL)
 	{
 		return (NULL);
 	}
-	dog.name = name;
-	dog.age = age;
-	dog.owner = owner;
-	mydog = &dog;
+	mydog = malloc(sizeof(dog_t));
+	if (mydog == NULL)
+	{
+		return (NULL);
+	}
+	m = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (m == NULL)
+	{
+		free(m);
+		return (NULL);
+	}
+	m = copy(m, name);
+	mydog->name =  name;
+	mydog->age = age;
+	b = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (b == NULL)
+	{
+		free(b);
+		return (NULL);
+	}
+	b = copy(b, owner);
+	mydog->owner = owner;
 	return (mydog);
 }
