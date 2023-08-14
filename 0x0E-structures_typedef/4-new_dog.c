@@ -20,14 +20,12 @@ int _strlen(char *n)
 }
 char *copy(char *m, char *name)
 {
-	char *a = m;
-
 	while (*name != '\0')
 	{
 		*m++ = *name++;
 	}
 	*m = '\0';
-	return (a);
+	return (m);
 }
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -47,12 +45,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (mydog->name == NULL)
 	{
 		free(mydog->name);
+		free(mydog);
 		return (NULL);
 	}
 	mydog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (mydog->owner == NULL)
 	{
 		free(mydog->owner);
+		free(mydo);
 		return (NULL);
 	}
 	(*mydog).name = copy(mydog->name, name);
