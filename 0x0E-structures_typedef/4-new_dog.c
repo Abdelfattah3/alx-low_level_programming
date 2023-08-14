@@ -20,12 +20,14 @@ int _strlen(char *n)
 }
 char *copy(char *m, char *name)
 {
+	char *a = m;
+
 	while (*name != '\0')
 	{
 		*m++ = *name++;
 	}
 	*m = '\0';
-	return (m);
+	return (a);
 }
 dog_t *new_dog(char *name, float age, char *owner)
 {
