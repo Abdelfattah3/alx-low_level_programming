@@ -11,7 +11,7 @@ int _strlen(char *n)
 {
 	int length = 0;
 
-	while (!*n)
+	while (*n != '\0')
 	{
 		length++;
 		n++;
@@ -21,13 +21,21 @@ int _strlen(char *n)
 char *copy(char *name)
 {
 	char *a;
+	char *b;
 
-	while (!*name)
+	a = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (a == NULL)
+	{
+		free(a);
+		return (NULL);
+	}
+	b = a;
+	while (*name != '\0')
 	{
 		*a++ = *name++;
 	}
 	*a = '\0';
-	return (a);
+	return (b);
 }
 dog_t *new_dog(char *name, float age, char *owner)
 {
