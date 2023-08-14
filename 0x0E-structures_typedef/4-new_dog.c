@@ -7,14 +7,14 @@
 * @owner : dog owner
 * Return: pointer to the new structure
 */
-int _strlen(char *name)
+int _strlen(char *n)
 {
 	int length = 0;
 
-	while (!*name)
+	while (!*n)
 	{
 		length++;
-		name++;
+		n++;
 	}
 	return (length);
 }
@@ -45,22 +45,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(mydog);
 		return (NULL);
 	}
-	a = malloc(sizeof(char) * (_strlen(name + 1)));
-	if ( a == NULL)
+	mydog->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (mydog->name == NULL)
 	{
-		free(a);
+		free(mydog->name);
 		return (NULL);
 	}
-	a = copy(name);
-	b = malloc(sizeof(char) * (_strlen(owner + 1)));
-	if ( b == NULL)
+	mydog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (mydog->owner == NULL)
 	{
-		free(b);
+		free(mydog->owner);
 		return (NULL);
 	}
-	b = copy(owner);
-	(*mydog).name = name;
+	(*mydog).name = copy(name);
 	(*mydog).age = age;
-	(*mydog).owner = owner;
+	(*mydog).owner = copy(owner);
 	return (mydog);
 }
