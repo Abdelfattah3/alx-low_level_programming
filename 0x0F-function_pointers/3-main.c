@@ -8,7 +8,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int a, b, c;
+	int a, b;
 
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
@@ -27,7 +27,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	c = get_op_func(argv[2])(a, b);
-	printf("%d\n", c);
+	printf("%d\n", get_op_func(argv[2])(a, b));
 	return (0);
 }
