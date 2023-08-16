@@ -1,7 +1,5 @@
 #ifndef CALC_H
 #define CALC_H
-#include "string.h"
-#include <stdio.h>
 int atoi(const char *string);
 int op_add(int a, int b);
 int op_sub(int a, int b);
