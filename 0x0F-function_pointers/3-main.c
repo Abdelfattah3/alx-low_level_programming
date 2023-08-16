@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	c = opp(atoi(argv[1]) ,atoi(argv[3]));
+	c = opp(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", c);
 	return (0);
 }
