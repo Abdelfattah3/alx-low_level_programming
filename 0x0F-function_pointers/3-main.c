@@ -7,11 +7,9 @@
 */
 int main(int argc, char *argv[])
 {
-	int a, b, c;
+	int c;
 	int (*opp)(int, int);
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -28,7 +26,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	c = opp(a ,b);
+	c = opp(atoi(argv[1]) ,atoi(argv[3]));
 	printf("%d\n", c);
 	return (0);
 }
