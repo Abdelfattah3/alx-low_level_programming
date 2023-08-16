@@ -9,6 +9,7 @@
 int main(int argc, char *argv[])
 {
 	int a, b;
+	int (*opp)(int, int);
 
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
@@ -22,11 +23,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	if (get_op_func(argv[2]) == NULL)
+	opp = get_op_func(argv[2]);
+	if (opp == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	printf("%d\n", get_op_func(argv[2])(a, b));
+	printf("%d\n", opp(a, b));
 	return (0);
 }
