@@ -22,10 +22,9 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i = count_binary(n);
 
-	if (index > i)
+	if (index >= i)
 	{
 		return (-1);
-		exit(-1);
 	}
 	if ((n >> index) & 1)
 	{
