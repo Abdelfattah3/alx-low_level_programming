@@ -1,18 +1,5 @@
 #include "main.h"
 /**
-* count_binary - prints the binary representation of a number
-* @n : the number
-* Return: the count of the binary bits
-*/
-unsigned int count_binary(unsigned long int n)
-{
-	if (n == 0)
-	{
-		return (1);
-	}
-	return (1 + count_binary(n >> 1));
-}
-/**
 * get_bit - gets the value of a bit at a given index
 * @n : the number
 * @index : the index number
@@ -20,7 +7,7 @@ unsigned int count_binary(unsigned long int n)
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i = count_binary(n);
+	unsigned int i = sizeof(unsigned long int) * 8;
 
 	if (index >= i)
 	{
