@@ -17,13 +17,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	rb = read(fd, buffer, sizeof(buffer));
-	if (rb > letters)
+	if (rb >= letters)
 	{
 		rb = letters;
-		fd = write(STDOUT_FILENO, buffer, rb);
+		fd = write(STDOUT_FILENO, buffer, letters);
 		if (fd == -1)
 		{
-			close(fd);
 			return (0);
 		}
 		wb = rb * 1;
@@ -34,7 +33,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		fd = write(STDOUT_FILENO, buffer, rb);
 		if (fd == -1)
 		{
-			close(fd);
 			return (0);
 		}
 		wb = rb * 1;
