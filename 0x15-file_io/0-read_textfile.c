@@ -8,7 +8,6 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char buffer[1024 * 8];
-	size_t rb;
 	ssize_t wb;
 	int fd;
 
@@ -21,27 +20,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	rb = read(fd, buffer, sizeof(buffer));
-	if (rb >= letters)
-	{
-		rb = letters;
-		fd = write(STDOUT_FILENO, &buffer[0], letters);
-		if (fd == -1)
-		{
-			return (0);
-		}
-		wb = rb * 1;
-		return (wb);
-	}
-	else
-	{
-		fd = write(STDOUT_FILENO, &buffer[0], rb);
-		if (fd == -1)
-		{
-			return (0);
-		}
-		wb = rb * 1;
-		return (wb);
-	}
+	wb = write(STDOUT_FILENO, &buffer[0], letters);
+	wb = write(STDOUT_FILENO, &buffer[0], wb);
 	close(fd);
+	return (wb);
 }
