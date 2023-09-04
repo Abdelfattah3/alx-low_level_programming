@@ -10,9 +10,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char buffer[1024];
 	size_t rb;
 	ssize_t wb;
-	int fd = open(filename, O_RDONLY);
+	int fd;
 
-	if (!filename || fd == -1 || !letters)
+	if (!filename || !letters)
+	{
+		return (0);
+	}
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 	{
 		return (0);
 	}
