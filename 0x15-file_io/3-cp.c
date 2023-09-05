@@ -1,4 +1,6 @@
 #include "main.h"
+
+#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 /**
 * main - appends text to file
 * @ac : number of arguments
@@ -19,7 +21,7 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
@@ -32,8 +34,10 @@ int main(int ac, char *av[])
 			exit(99);
 		}
 	if (by == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-	exit(98);
+		exit(98);
+	}
 	ft = close(ft);
 	fd = close(fd);
 	if (ft)
