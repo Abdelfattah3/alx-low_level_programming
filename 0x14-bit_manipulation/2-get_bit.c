@@ -1,0 +1,37 @@
+#include "main.h"
+/**
+* get_bit - gets the bit at index
+* @n : the number
+* @index : the index of the number
+* Return: the value of the index
+*/
+int get_bit(unsigned long int n, unsigned int index)
+{
+	unsigned int i;
+
+	i = 0;
+	while (i < index)
+	{
+		n = n >> 1;
+		i++;
+	}
+	if (n == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		if ((n & 1) == 1)
+		{
+			return (1);
+		}
+		else if ((n & 1) == 0)
+		{
+			return (0);
+		}
+		else
+		{
+			return (-1);
+		}
+	}
+}
