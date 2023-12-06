@@ -25,11 +25,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	nd->key = strdup(key);
 	nd->value = strdup(value);
 	nd->next = NULL;
+	ky = ht->size;
 	vl = key_index((unsigned char *)key, ky);
 	if (ht->array[vl])
 	{
 		nd->next = ht->array[vl];
+		ht->array[vl]->next = NULL;
 	}
-	ht->array[vl] = nd;
+	nd = ht->array[vl];
 	return (1);
 }
